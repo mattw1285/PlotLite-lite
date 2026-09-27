@@ -22,8 +22,10 @@ html, body {
 
 header {
     height: var(--header-height);
+    display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 20px;
 }
 
 #map {
@@ -40,11 +42,14 @@ header {
 </head>
 <body>
     <header id="header">
-        <h1>PlotLite</h1>
         <a href="https://github.com/mattw1285/PlotLite-core">
+            <img src="./imgs/github.svg">
             <span>GitHub</span>
-            <img src="./assets/github.svg">
-        </a>        
+            
+        </a>
+        <img src="./imgs/logo.jpg" width="250">
+        <h1>PlotLite</h1>
+        <p>&copy; mattw1285</p>    
     </header>
 
     <div id="map"></div>
