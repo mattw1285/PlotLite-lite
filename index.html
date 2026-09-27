@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    
+    <title>PlotLite</title>
+
+    <link rel="stylesheet" 
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin="anonymous"
+    />
+    
+    <style>
+      
+:root {
+    font-family: sans-serif;
+    --header-height: 75px;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    height: var(--header-height);
+    align-items: center;
+    justify-content: space-between;
+}
+
+#map {
+    width: 100%;
+    height: calc(100% - var(--header-height));
+}
+    
+    </style>
+</head>
+<body>
+    <header id="header">
+        <h1>PlotLite</h1>
+        <a href="https://github.com/mattw1285/PlotLite-core">
+            <span>GitHub</span>
+            <img src="./assets/github.svg">
+        </a>        
+    </header>
+
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin="anonymous">
+    </script>
+
+    <script>
+      
+const map = L.map('map').setView([54.5,-2.5],6);
+
+L.tileLayer(
+    'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+    {
+        maxZoom:19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'     
+    }
+).addTo(map);
+      
+    </script>
+</body>
+</html>
