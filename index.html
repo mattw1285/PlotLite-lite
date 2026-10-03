@@ -9,35 +9,49 @@
 <style>      
 :root {
     font-family: sans-serif;
+    
     --header-height: 75px;
+    --default-background: #E0E0E0;
+    --roundness: 5px;
+    --external-margin: 1%;
 }
 
 html, body {
-    width: 100%;
+    width: calc(100% - var(--external-margin));
     height: 100%;
-    margin: 0;
+    
     display: flex;
     flex-direction: column;
-    background-color: #E0E0E0;
+
+    background-color: var(--default-background);
 }
 
 header {
     height: var(--header-height);
+    flex-shrink: 0;
+    
     display: flex;
     align-items: center;
     justify-content: space-between;
+    
     padding: 0 20px;
-    border-radius: 10px;
-    margin: 5px;
+    
     background-color: #FFFFFF;
+    border-radius: var(--roundness);
+}
+
+body {
+    padding: var(--external-margin);
+    box-sizing: border-box;
+    gap: var(--external-margin);
 }
 
 #map {
-    width: 100%;
-    height: calc(100% - var(--header-height));
-    border-radius: 10px;
-    margin: 5px;
+    flex: 1;
+    min-height: 0;
+    min-width: 0;
     
+    border-radius: var(--roundness);
 }    
 </style>
     
