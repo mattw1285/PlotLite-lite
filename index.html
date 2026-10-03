@@ -6,24 +6,33 @@
     
     <title>PlotLite</title>
     
-<style>      
+<style>  
 :root {
     font-family: sans-serif;
-    
+  
+
     --header-height: 75px;
     --default-background: #E0E0E0;
     --roundness: 5px;
     --external-margin: 1%;
 }
 
-html, body {
-    width: calc(100% - var(--external-margin));
+html, body{
+    width: 100%;
     height: 100%;
-    
+    margin: 0;
+}
+
+body {
     display: flex;
     flex-direction: column;
+    
+    box-sizing: border-box;
 
-    background-color: var(--default-background);
+    padding: var(--external-margin);
+    gap: var(--external-margin);
+
+    background-color:var(--default-background);
 }
 
 header {
@@ -38,12 +47,6 @@ header {
     
     background-color: #FFFFFF;
     border-radius: var(--roundness);
-}
-
-body {
-    padding: var(--external-margin);
-    box-sizing: border-box;
-    gap: var(--external-margin);
 }
 
 #map {
