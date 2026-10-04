@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <clipPath id="mapClip"><path d="M72 236 256 132l184 104-184 105Z"/></clipPath>
+  </defs>
+  <!-- layered map -->
+  <path d="M72 326 256 222l184 104-184 105Z" fill="#244b7f"/>
+  <path d="M72 292 256 188l184 104-184 105Z" fill="#2d7fd8"/>
+  <path d="M72 236 256 132l184 104-184 105Z" fill="#72b957"/>
+  <!-- terrain -->
+  <g clip-path="url(#mapClip)">
+    <path d="M55 255c55-35 83-11 129-31 44-19 65-58 124-53 51 4 69 29 139 26v120H55Z" fill="#2f8752"/>
+    <path d="M44 294c54-27 87-17 125-1 44 19 67 8 103-8 40-18 75-13 116 10 30 17 58 20 90 12v55H44Z" fill="#67aa4c"/>
+    <!-- river -->
+    <path d="M187 133c29 26 23 48 45 66 25 20 49 28 43 53-6 25-48 33-48 65 0 22 28 42 43 63" fill="none" stroke="#258eea" stroke-width="25" stroke-linecap="round"/>
+    <!-- roads -->
+    <path d="M68 250c56 7 91 12 133 40 31 21 56 37 109 42 40 4 78 17 117 40" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round"/>
+    <path d="M230 135c6 31 13 57 35 76 22 20 52 31 86 38 30 6 56 20 76 42" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <!-- location pin -->
+  <path d="M256 50c-47 0-85 38-85 85 0 62 85 128 85 128s85-66 85-128c0-47-38-85-85-85Z" fill="#2478d4"/>
+  <circle cx="256" cy="135" r="31" fill="#fff"/>
+  <!-- pencil -->
+  <g transform="rotate(38 355 286)">
+    <rect x="327" y="183" width="55" height="183" rx="9" fill="#263951"/>
+    <path d="M327 366h55l-27.5 49Z" fill="#263951"/>
+    <path d="M345 398 355 415l10-17Z" fill="#f1d6b5"/>
+    <rect x="327" y="183" width="55" height="25" rx="9" fill="#3d536d"/>
+  </g>
+</svg>
