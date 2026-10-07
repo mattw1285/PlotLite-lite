@@ -118,7 +118,7 @@ header p {
 } 
 
 .leaflet-top {
-    top: calc(var(--header-height) + var(--external-margin) * 2);
+    top: calc(var(--header-height) + var(--external-margin) * 1);
 }
 </style>
 </head>
@@ -154,7 +154,7 @@ const map = L.map(
         ],
         maxBoundsViscosity: 1.0
     }
-).setView([54.5,-2.5],6);
+).setView([54.9974, -1.457], 19);
 
 L.tileLayer(
     'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
