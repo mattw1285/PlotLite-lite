@@ -7,53 +7,75 @@
     <link rel="icon" type="image/x-icon" href="./imgs/plotlite-logo.svg">
     
     <title>PlotLite</title>
+
+    <link rel="stylesheet" 
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin="anonymous"
+    />
+
 <style>  
 :root {
     font-family: sans-serif;
+
     --header-height: 70px;
     --default-background: #E0E0E0;
     --roundness: 8px;
     --external-margin: 10px;
 }
 
-html, body {
+html,
+body {
     width: 100%;
     height: 100%;
     margin: 0;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    padding: var(--external-margin);
-    gap: var(--external-margin);
     background-color: var(--default-background);
 }
 
+#map {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 0;
+}
+
 header {
+    position: absolute;
+    top: var(--external-margin);
+    left: var(--external-margin);
+    right: var(--external-margin);
+
     height: var(--header-height);
-    flex-shrink: 0;
-    
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
+
     padding: 0 20px;
+
     background-color: #FFFFFF;
     border-radius: var(--roundness);
     box-sizing: border-box;
 
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+    z-index: 1000;
 }
 
-/* Left: GitHub Link */
 header a {
     display: flex;
     align-items: center;
     gap: 8px;
+
     text-decoration: none;
     color: #333;
+
     font-size: 0.95rem;
     font-weight: 500;
 }
@@ -63,137 +85,44 @@ header a img {
     height: 20px;
 }
 
-/* Center: Logo & Title */
+/* Logo + title */
 header h1 {
     display: flex;
     align-items: center;
     gap: 10px;
+
     margin: 0;
+
     font-size: 1.25rem;
     color: #111;
 }
 
 header h1 img {
-    height: 36px; /* Explicit height prevents massive SVG blowouts */
+    height: 36px;
     width: auto;
 }
 
-/* Right: Copyright */
+/* Copyright */
 header p {
     margin: 0;
+
     color: #666;
     font-size: 0.85rem;
 }
-
 #map {
     flex: 1;
     min-height: 0;
     min-width: 0;
     
     border-radius: var(--roundness);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
-}  
+} 
 
-
-
-
-/*
-:root {
-    font-family: sans-serif;
-    
-    --header-height: 75px;
-    --default-background: #E0E0E0;
-    --roundness: 5px;
-    --external-margin: 1%;
+.leaflet-top {
+    top: calc(var(--header-height) + var(--external-margin) * 2);
 }
-
-html, body{
-    width: 100%;
-    height: 100%;
-    margin: 0;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    
-    box-sizing: border-box;
-
-    padding: var(--external-margin);
-    gap: var(--external-margin);
-
-    background-color:var(--default-background);
-}
-
-header {
-    height: var(--header-height);
-    flex-shrink: 0;
-    
-    display: grid;
-    align-items: center;
-    
-    padding: 0 20px;
-    background-color: #FFFFFF;
-    border-radius: var(--roundness);
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-header > img {
-    height: calc(var(--header-height) * 0.6);
-    width: auto;
-}
-
-/*header > a {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    color: #333333;
-    font-weight: 500;
-    transition: opacity 0.2s ease;
-    justify-self: start;
-}
-
-header > a:hover {
-    opacity: 0.7;
-}*/
-
-/* Center: Logo styling 
-header > h1 {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin: 0;
-    font-size: 1.25rem;
-    color: #111111;
-    justify-self: center;
-}*/
-
-
-
-/* Right: Copyright styling 
-header > p {
-    margin: 0;
-    color: #666666;
-    font-size: 0.9rem;
-    justify-self: end;
-}*/
-
-#map {
-    flex: 1;
-    min-height: 0;
-    min-width: 0;
-    
-    border-radius: var(--roundness);
-}    */
 </style>
-    
-    <link rel="stylesheet" 
-        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-        crossorigin="anonymous"
-    />
 </head>
+
 <body>
     <header id="header">
         <a href="https://github.com/mattw1285/PlotLite-lite">
