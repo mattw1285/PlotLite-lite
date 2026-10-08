@@ -94,7 +94,7 @@ header h1 {
 
     margin: 0;
 
-    font-size: 1.25rem;
+    font-size: 2rem;
     color: #36c990;
 }
 
@@ -116,20 +116,20 @@ header p {
     top: calc(var(--header-height) + var(--external-margin) * 1);
 }
 
-svg {
-  stroke: #36c990;
+.logo {
+    
+    -webkit-mask: url('./imgs/plotlite-logo.svg') no-repeat center / contain;
+    mask: url('./imgs/plotlite-logo.svg') no-repeat center / contain;
+    
+    stroke: var(--plotlite-colors);
+    background-color: var(--plotlite-colors);
 }
 
 #header-logo {
-    width: 45px;
-    height: 45px;
-    background-color: var(--plotlite-colors);
+    --logo-multiplier: 0.75;
 
-    -webkit-mask-image: url('./imgs/plotlite-logo.svg');
-    mask-image: url('./imgs/plotlite-logo.svg');
-    
-    -webkit-mask-size: contain;
-    mask-size: contain;
+    width: calc(var(--logo-multiplier) * var(--header-height));
+    height: calc(var(--logo-multiplier) * var(--header-height));
 }
 </style>
 </head>
@@ -142,7 +142,7 @@ svg {
             
         </a>
         <h1>
-            <div id="header-logo"></div>
+            <div class="logo" id="header-logo"></div>
             PlotLite
         </h1>
         <p>&copy; mattw1285</p>    
