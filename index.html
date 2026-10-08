@@ -22,6 +22,7 @@
     --default-background: #E0E0E0;
     --roundness: 8px;
     --external-margin: 10px;
+    --plotlite-colors: #36c990;
 }
 
 html,
@@ -93,16 +94,10 @@ header h1 {
 
     margin: 0;
 
-    font-size: 1.25rem;
-    color: #111;
+    font-size: 2rem;
+    color: #36c990;
 }
 
-header h1 img {
-    height: 36px;
-    width: auto;
-}
-
-/* Copyright */
 header p {
     margin: 0;
 
@@ -118,7 +113,23 @@ header p {
 } 
 
 .leaflet-top {
-    top: calc(var(--header-height) + var(--external-margin) * 2);
+    top: calc(var(--header-height) + var(--external-margin) * 1);
+}
+
+.logo {
+    
+    -webkit-mask: url('./imgs/plotlite-logo.svg') no-repeat center / contain;
+    mask: url('./imgs/plotlite-logo.svg') no-repeat center / contain;
+    
+    stroke: var(--plotlite-colors);
+    background-color: var(--plotlite-colors);
+}
+
+#header-logo {
+    --logo-multiplier: 0.75;
+
+    width: calc(var(--logo-multiplier) * var(--header-height));
+    height: calc(var(--logo-multiplier) * var(--header-height));
 }
 </style>
 </head>
@@ -131,7 +142,7 @@ header p {
             
         </a>
         <h1>
-            <img src="./imgs/plotlite-logo.svg"style="height: var(--header-height)">
+            <div class="logo" id="header-logo"></div>
             PlotLite
         </h1>
         <p>&copy; mattw1285</p>    
@@ -154,7 +165,7 @@ const map = L.map(
         ],
         maxBoundsViscosity: 1.0
     }
-).setView([54.5,-2.5],6);
+).setView([54.9974, -1.457], 19);
 
 L.tileLayer(
     'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
