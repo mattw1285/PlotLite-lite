@@ -117,9 +117,8 @@ header p {
 }
 
 .logo {
-    
-    -webkit-mask: url('./imgs/plotlite-logo.svg') no-repeat center / contain;
-    mask: url('./imgs/plotlite-logo.svg') no-repeat center / contain;
+    -webkit-mask: url('https://raw.githubusercontent.com/mattw1285/PlotLite/main/assets/plotlite-logo.svg') no-repeat center / contain;
+    mask: url('https://raw.githubusercontent.com/mattw1285/PlotLite/main/assets/plotlite-logo.svg') no-repeat center / contain;
     
     stroke: var(--plotlite-colors);
     background-color: var(--plotlite-colors);
@@ -136,16 +135,15 @@ header p {
 
 <body>
     <header id="header">
-        <a href="https://github.com/mattw1285/PlotLite-lite">
+        <a href="https://github.com/mattw1285/PlotLite-lite" target="_blank">
             <img src="./imgs/github.svg">
             <span>GitHub</span>
-            
         </a>
         <h1>
             <div class="logo" id="header-logo"></div>
             PlotLite
         </h1>
-        <p>&copy; mattw1285</p>    
+        <a href="https://mattw1285.github.io/PlotLite-lite/" target="_blank">&copy; mattw1285</a>    
     </header>
 
     <div id="map"></div>
