@@ -21,7 +21,9 @@
     
     --default-background: #E0E0E0;
     --roundness: 8px;
-
+    
+    --github-logo: url('https://raw.githubusercontent.com/mattw1285/PlotLite/main/assets/github.svg');
+    
     --plotlite-colors: #36c990;
     --plotlite-logo: url('https://raw.githubusercontent.com/mattw1285/PlotLite/main/assets/plotlite-logo.svg');
 }
@@ -120,18 +122,21 @@ header p {
 
 .github-logo{
     -webkit-mask: 
-        var(--plotlite-logo)
+        var(--github-logo)
         no-repeat 
         center / contain
     ;
     mask: 
-        var(--plotlite-logo)
+        var(--github-logo)
         no-repeat 
         center / contain
     ;
     
     stroke: var(--plotlite-colors);
     background-color: var(--plotlite-colors);
+    
+    width: 20px;
+    height: 20px;
 }
 
 .plotlite-logo {
@@ -162,7 +167,7 @@ header p {
 <body>
     <header id="header">
         <a href="https://github.com/mattw1285/PlotLite-lite" target="_blank">
-            <img src="./imgs/github.svg">
+            <div class="github-logo"></div>
             <span>GitHub</span>
         </a>
         <h1>
