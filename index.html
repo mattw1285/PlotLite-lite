@@ -18,15 +18,14 @@
 :root {
     font-family: sans-serif;
 
-    --header-height: 70px;
+    
     --default-background: #E0E0E0;
     --roundness: 8px;
-    --external-margin: 10px;
+    
     --plotlite-colors: #36c990;
 }
 
-html,
-body {
+html, body {
     width: 100%;
     height: 100%;
     margin: 0;
@@ -47,6 +46,9 @@ body {
 }
 
 header {
+    --header-height: 70px;
+    --external-margin: 10px;
+    
     position: absolute;
     top: var(--external-margin);
     left: var(--external-margin);
@@ -72,7 +74,7 @@ header {
 header a {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 5px;
 
     text-decoration: none;
     color: #333;
@@ -86,7 +88,6 @@ header a img {
     height: 20px;
 }
 
-/* Logo + title */
 header h1 {
     display: flex;
     align-items: center;
