@@ -23,6 +23,7 @@
     --roundness: 8px;
     
     --plotlite-colors: #36c990;
+    --plotlite-logo: url('https://raw.githubusercontent.com/mattw1285/PlotLite/main/assets/plotlite-logo.svg');
 }
 
 html, body {
@@ -119,12 +120,12 @@ header p {
 
 .logo {
     -webkit-mask: 
-        url('https://raw.githubusercontent.com/mattw1285/PlotLite/main/assets/plotlite-logo.svg') 
+        var(--plotlite-logo)
         no-repeat 
         center / contain
     ;
     mask: 
-        url('https://raw.githubusercontent.com/mattw1285/PlotLite/main/assets/plotlite-logo.svg') 
+        var(--plotlite-logo)
         no-repeat 
         center / contain
     ;
