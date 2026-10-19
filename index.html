@@ -21,7 +21,7 @@
     
     --default-background: #E0E0E0;
     --roundness: 8px;
-    
+
     --plotlite-colors: #36c990;
     --plotlite-logo: url('https://raw.githubusercontent.com/mattw1285/PlotLite/main/assets/plotlite-logo.svg');
 }
@@ -118,7 +118,23 @@ header p {
     top: calc(var(--header-height) + var(--external-margin) * 1);
 }
 
-.logo {
+.github-logo{
+    -webkit-mask: 
+        var(--plotlite-logo)
+        no-repeat 
+        center / contain
+    ;
+    mask: 
+        var(--plotlite-logo)
+        no-repeat 
+        center / contain
+    ;
+    
+    stroke: var(--plotlite-colors);
+    background-color: var(--plotlite-colors);
+}
+
+.plotlite-logo {
     -webkit-mask: 
         var(--plotlite-logo)
         no-repeat 
@@ -150,7 +166,7 @@ header p {
             <span>GitHub</span>
         </a>
         <h1>
-            <div class="logo" id="header-logo"></div>
+            <div class="plotlite-logo" id="header-logo"></div>
             PlotLite
         </h1>
         <a href="https://mattw1285.github.io/PlotLite-lite/" target="_blank">&copy; mattw1285</a>    
