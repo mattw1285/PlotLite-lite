@@ -53,6 +53,10 @@ body {
     
     stroke: var(--plotlite-colors);
     background-color: var(--plotlite-colors);
+
+    width: 80%;
+    height: 80%;
+
 }
 
 .plotlite-logo {
@@ -103,6 +107,14 @@ header {
 
     width: 50px;
     height: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background: white;
+    border-radius: var(--roundness);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
     z-index: 1000;
 }
@@ -177,7 +189,9 @@ header p {
         <a href="https://mattw1285.github.io/" target="_blank">&copy; mattw1285</a>    
     </header>
 
-    <a href="https://github.com/mattw1285/PlotLite-lite" target="_blank" class="github-logo" id="gh-link"></a>
+    <a href="https://github.com/mattw1285/PlotLite-lite" target="_blank" id="gh-link">
+        <div class="github-logo"></div>
+    </a>
 
     <div id="map"></div>
 
