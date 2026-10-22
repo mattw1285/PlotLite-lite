@@ -21,7 +21,7 @@
     
     --plotlite-colors: #007e30;
     --plotlite-logo: url('https://raw.githubusercontent.com/mattw1285/PlotLite/main/assets/plotlite-logo.svg');
-    --plotlite-background: #E0E0E0;
+    --plotlite-background: #FFFFFF;
 
     --github-logo: url('https://raw.githubusercontent.com/mattw1285/PlotLite/main/assets/github.svg');
 
@@ -86,6 +86,8 @@ body {
     background-color: var(--plotlite-background);
     border-radius: var(--roundness);
     box-sizing: border-box;
+
+    text-decoration: none;
 }
 
 header {
@@ -108,6 +110,39 @@ header {
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
     z-index: 1000;
+}
+
+header a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    text-decoration: none;
+    color: #333;
+
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+header h1 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin: 0;
+
+    font-size: 2rem;
+    color: var(--plotlite-colors);
+}
+
+#map {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 0;
 }
 
 #gh-link{
@@ -134,47 +169,12 @@ header {
 
     width: 50px;
     height: 50px;
-
-    text-decoration: none;
     
     background: white;
     border-radius: var(--roundness);
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
     z-index: 1000;
-}
-
-#map {
-    position: fixed;
-    inset: 0;
-
-    width: 100%;
-    height: 100%;
-
-    z-index: 0;
-}
-
-header a {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-
-    text-decoration: none;
-    color: #333;
-
-    font-size: 0.95rem;
-    font-weight: 500;
-}
-
-header h1 {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    margin: 0;
-
-    font-size: 2rem;
-    color: #36c990;
 }
 
 #map {
@@ -244,7 +244,6 @@ L.tileLayer(
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'     
     }
 ).addTo(map);
-      
 </script>
 </body>
 </html>
