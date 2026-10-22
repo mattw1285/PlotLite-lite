@@ -24,6 +24,9 @@
     --plotlite-background: #E0E0E0;
 
     --github-logo: url('https://raw.githubusercontent.com/mattw1285/PlotLite/main/assets/github.svg');
+
+    --header-height: 70px;
+    --external-margin: 10px;
 }
 
 html, body {
@@ -36,20 +39,44 @@ body {
     background-color: var(--default-background);
 }
 
-#map {
-    position: fixed;
-    inset: 0;
+.github-logo{
+    -webkit-mask: 
+        var(--github-logo)
+        no-repeat 
+        center / contain
+    ;
+    mask: 
+        var(--github-logo)
+        no-repeat 
+        center / contain
+    ;
+    
+    stroke: var(--plotlite-colors);
+    background-color: var(--plotlite-colors);
 
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
 
-    z-index: 0;
+}
+
+.plotlite-logo {
+    -webkit-mask: 
+        var(--plotlite-logo)
+        no-repeat 
+        center / contain
+    ;
+    mask: 
+        var(--plotlite-logo)
+        no-repeat 
+        center / contain
+    ;
+    
+    stroke: var(--plotlite-colors);
+    background-color: var(--plotlite-colors);
 }
 
 header {
-    --header-height: 70px;
-    --external-margin: 10px;
-    
+
     position: absolute;
     top: var(--external-margin);
     left: var(--external-margin);
@@ -72,6 +99,36 @@ header {
     z-index: 1000;
 }
 
+#gh-link{
+    position: absolute;
+
+    top: calc(var(--external-margin) + var(--header-height) + 10px);
+    right: var(--external-margin);
+
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background: white;
+    border-radius: var(--roundness);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+    z-index: 1000;
+}
+
+#map {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 0;
+}
+
 header a {
     display: flex;
     align-items: center;
@@ -82,11 +139,6 @@ header a {
 
     font-size: 0.95rem;
     font-weight: 500;
-}
-
-header a img {
-    width: 20px;
-    height: 20px;
 }
 
 header h1 {
@@ -100,54 +152,11 @@ header h1 {
     color: #36c990;
 }
 
-header p {
-    margin: 0;
-
-    color: #666;
-    font-size: 0.85rem;
-}
 #map {
     flex: 1;
     min-height: 0;
     min-width: 0;
-    
-    border-radius: var(--roundness);
 } 
-
-.github-logo{
-    -webkit-mask: 
-        var(--github-logo)
-        no-repeat 
-        center / contain
-    ;
-    mask: 
-        var(--github-logo)
-        no-repeat 
-        center / contain
-    ;
-    
-    stroke: var(--plotlite-colors);
-    background-color: var(--plotlite-colors);
-    
-    width: 20px;
-    height: 20px;
-}
-
-.plotlite-logo {
-    -webkit-mask: 
-        var(--plotlite-logo)
-        no-repeat 
-        center / contain
-    ;
-    mask: 
-        var(--plotlite-logo)
-        no-repeat 
-        center / contain
-    ;
-    
-    stroke: var(--plotlite-colors);
-    background-color: var(--plotlite-colors);
-}
 
 #header-logo {
     --logo-multiplier: 0.75;
@@ -160,13 +169,16 @@ header p {
 
 <body>
     <header id="header">
-        <a href="https://github.com/mattw1285/PlotLite-lite" target="_blank" class="github-logo"></a>
         <h1>
             <div class="plotlite-logo" id="header-logo"></div>
             PlotLite
         </h1>
         <a href="https://mattw1285.github.io/" target="_blank">&copy; mattw1285</a>    
     </header>
+
+    <a href="https://github.com/mattw1285/PlotLite-lite" target="_blank" id="gh-link">
+        <div class="github-logo"></div>
+    </a>
 
     <div id="map"></div>
 
