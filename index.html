@@ -75,6 +75,12 @@ body {
     background-color: var(--plotlite-colors);
 }
 
+.link-tile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 header {
 
     position: absolute;
@@ -107,6 +113,28 @@ header {
 
     width: 50px;
     height: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background: white;
+    border-radius: var(--roundness);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+    z-index: 1000;
+}
+
+#license-link {
+    position: absolute;
+
+    top: calc(var(--external-margin) + 2 * var(--header-height));
+    right: var(--external-margin);
+
+    width: 50px;
+    height: 50px;
+
+    text-decoration: none;
 
     display: flex;
     justify-content: center;
@@ -179,6 +207,11 @@ header h1 {
     <a href="https://github.com/mattw1285/PlotLite-lite" target="_blank" id="gh-link">
         <div class="github-logo"></div>
     </a>
+
+    <a href="./LICENSE.md" 
+        id="license-link"
+        target="_blank" 
+    >&copy;</a>
 
     <div id="map"></div>
 
