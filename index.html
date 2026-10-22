@@ -22,6 +22,7 @@
     --plotlite-colors: #007e30;
     --plotlite-logo: url('https://raw.githubusercontent.com/mattw1285/PlotLite/main/assets/plotlite-logo.svg');
     --plotlite-background: #FFFFFF;
+    --plotlite-shadow: ;
 
     --github-logo: url('https://raw.githubusercontent.com/mattw1285/PlotLite/main/assets/github.svg');
 
@@ -88,6 +89,7 @@ body {
     box-sizing: border-box;
 
     text-decoration: none;
+    color: var(--plotlite-colors);
 }
 
 header {
@@ -98,9 +100,9 @@ header {
 
     height: var(--header-height);
 
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    justify-content: space-between;
 
     padding: 0 20px;
 
@@ -112,19 +114,8 @@ header {
     z-index: 1000;
 }
 
-header a {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-
-    text-decoration: none;
-    color: #333;
-
-    font-size: 0.95rem;
-    font-weight: 500;
-}
-
 header h1 {
+    grid-column: 2;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -134,6 +125,21 @@ header h1 {
     font-size: 2rem;
     color: var(--plotlite-colors);
 }
+
+header a {
+    grid-column: 3;
+    justify-self: right;
+    
+    gap: 5px;
+
+    text-decoration: none;
+    color: #333;
+
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+
 
 #map {
     position: fixed;
@@ -150,9 +156,6 @@ header h1 {
 
     top: calc(var(--external-margin) + var(--header-height) + 10px);
     right: var(--external-margin);
-
-    width: 50px;
-    height: 50px;
     
     background: white;
     border-radius: var(--roundness);
@@ -167,21 +170,12 @@ header h1 {
     top: calc(var(--external-margin) + 2 * var(--header-height));
     right: var(--external-margin);
 
-    width: 50px;
-    height: 50px;
-    
     background: white;
     border-radius: var(--roundness);
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
     z-index: 1000;
 }
-
-#map {
-    flex: 1;
-    min-height: 0;
-    min-width: 0;
-} 
 
 #header-logo {
     --logo-multiplier: 0.75;
@@ -196,7 +190,7 @@ header h1 {
     <header id="header">
         <h1>
             <div class="plotlite-logo" id="header-logo"></div>
-            PlotLite
+            PlotLite-lite
         </h1>
         <a href="https://mattw1285.github.io/" target="_blank" rel="noopener noreferrer">&copy; mattw1285</a>    
     </header>
@@ -221,8 +215,8 @@ header h1 {
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-        crossorigin="anonymous">
-    </script>
+        crossorigin="anonymous"
+    ></script>
 
 <script>      
 const map = L.map(
