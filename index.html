@@ -19,7 +19,7 @@
     font-family: sans-serif;
     --roundness: 8px;
     
-    --plotlite-colors: #36c990;
+    --plotlite-colors: #007e30;
     --plotlite-logo: url('https://raw.githubusercontent.com/mattw1285/PlotLite/main/assets/plotlite-logo.svg');
     --plotlite-background: #E0E0E0;
 
@@ -54,8 +54,8 @@ body {
     stroke: var(--plotlite-colors);
     background-color: var(--plotlite-colors);
 
-    width: 80%;
-    height: 80%;
+    width: 70%;
+    height: 70%;
 
 }
 
@@ -79,10 +79,16 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    width: 50px;
+    height: 50px;
+
+    background-color: var(--plotlite-background);
+    border-radius: var(--roundness);
+    box-sizing: border-box;
 }
 
 header {
-
     position: absolute;
     top: var(--external-margin);
     left: var(--external-margin);
@@ -98,7 +104,6 @@ header {
 
     background-color: #FFFFFF;
     border-radius: var(--roundness);
-    box-sizing: border-box;
 
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
@@ -113,10 +118,6 @@ header {
 
     width: 50px;
     height: 50px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
     
     background: white;
     border-radius: var(--roundness);
@@ -135,10 +136,6 @@ header {
     height: 50px;
 
     text-decoration: none;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
     
     background: white;
     border-radius: var(--roundness);
@@ -201,16 +198,23 @@ header h1 {
             <div class="plotlite-logo" id="header-logo"></div>
             PlotLite
         </h1>
-        <a href="https://mattw1285.github.io/" target="_blank">&copy; mattw1285</a>    
+        <a href="https://mattw1285.github.io/" target="_blank" rel="noopener noreferrer">&copy; mattw1285</a>    
     </header>
 
-    <a href="https://github.com/mattw1285/PlotLite-lite" target="_blank" id="gh-link">
+    <a href="https://github.com/mattw1285/PlotLite-lite" 
+        target="_blank"  
+        rel="noopener noreferrer"
+        id="gh-link"
+        class="link-tile"
+    >
         <div class="github-logo"></div>
     </a>
 
     <a href="./LICENSE.md" 
+        target="_blank"  
+        rel="noopener noreferrer"
         id="license-link"
-        target="_blank" 
+        class="link-tile"
     >&copy;</a>
 
     <div id="map"></div>
