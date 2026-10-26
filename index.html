@@ -246,6 +246,7 @@ header a {
 const map = L.map(
     'map',
     {
+        zoomControl: false,
         maxBounds: [
             [-85.05, -180],
             [85.05, 180]
@@ -262,6 +263,10 @@ L.tileLayer(
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'     
     }
 ).addTo(map);
+
+L.control.zoom({
+    position: 'bottomleft'
+}).addTo(map);
 </script>
 </body>
 </html>
