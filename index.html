@@ -119,7 +119,8 @@ header {
     position: absolute;
     top: var(--external-margin);
     left: var(--external-margin);
-    right: var(--external-margin);
+    
+    width: 75%;
 
     height: var(--header-height);
 
@@ -149,18 +150,46 @@ header h1 {
     color: var(--plotlite-colors);
 }
 
+
 header a {
     grid-column: 3;
-    justify-self: right;
-    
-    gap: 5px;
+    justify-self: end;
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    padding: 8px 12px;
+    border-radius: var(--roundness);
 
     text-decoration: none;
-    color: #333;
-
-    font-size: 0.95rem;
+    color: #777;
+    font-size: 0.85rem;
     font-weight: 500;
+    letter-spacing: 0.02em;
+
+    transition:
+        color 0.2s ease,
+        background-color 0.2s ease;
 }
+
+header a::before {
+    content: "by";
+    color: #aaa;
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+
+header a:hover {
+    color: var(--plotlite-colors);
+    background-color: #f0f7f2;
+}
+
+header a:focus-visible {
+    outline: 2px solid var(--plotlite-colors);
+    outline-offset: 2px;
+}
+
 
 
 
@@ -178,7 +207,7 @@ header a {
     position: absolute;
 
     top: calc(var(--external-margin) + var(--header-height) + 10px);
-    right: var(--external-margin);
+    left: var(--external-margin);
     
     background: white;
     border-radius: var(--roundness);
@@ -191,7 +220,7 @@ header a {
     position: absolute;
 
     top: calc(var(--external-margin) + 2 * var(--header-height));
-    right: var(--external-margin);
+    left: var(--external-margin);
 
     background: white;
     border-radius: var(--roundness);
@@ -265,7 +294,7 @@ L.tileLayer(
 ).addTo(map);
 
 L.control.zoom({
-    position: 'bottomleft'
+    position: 'topright'
 }).addTo(map);
 </script>
 </body>
