@@ -37,8 +37,42 @@ html, body {
     margin: 0;
 }
 
-body {
-    background-color: var(--default-background);
+aside a {
+    --tile-size: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: var(--tile-size);
+    height: var(--tile-size);
+
+    background-color: var(--pl-background);
+    border-radius: var(--roundness);
+    box-sizing: border-box;
+
+    text-decoration: none;
+    color: var(--pl-colors);
+    font-size: var(--tile-size);--tile-size: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: var(--tile-size);
+    height: var(--tile-size);
+
+    background-color: var(--pl-background);
+    border-radius: var(--roundness);
+    box-sizing: border-box;
+
+    text-decoration: none;
+    color: var(--pl-colors);
+    font-size: var(--tile-size);
+}
+
+aside a:hover {
+    background-color: #000000 impr;
 }
 
 .github-logo{
@@ -96,25 +130,6 @@ body {
     height: 70%;
 }
 
-.link-tile{
-    --tile-size: 50px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    width: var(--tile-size);
-    height: var(--tile-size);
-
-    background-color: var(--pl-background);
-    border-radius: var(--roundness);
-    box-sizing: border-box;
-
-    text-decoration: none;
-    color: var(--pl-colors);
-    font-size: var(--tile-size);
-}
-
 header {
     position: absolute;
     top: var(--external-margin);
@@ -152,53 +167,13 @@ header h1 {
 }
 
 
-header a {
-    grid-column: 3;
-    justify-self: end;
-
-    display: flex;
-    align-items: center;
-    gap: 6px;
-
-    padding: 8px 12px;
-    border-radius: var(--roundness);
-
-    text-decoration: none;
-    color: #777;
-    font-size: 0.85rem;
-    font-weight: 500;
-    letter-spacing: 0.02em;
-
-    transition:
-        color 0.2s ease,
-        background-color 0.2s ease;
-}
-
-header a::before {
-    color: #aaa;
-    font-size: 0.8rem;
-    font-weight: 400;
-}
-
-header a:hover {
-    color: var(--pl-colors);
-    background-color: #f0f7f2;
-}
-
-header a:focus-visible {
-    outline: 2px solid var(--pl-colors);
-    outline-offset: 2px;
-}
-
-
 #map {
     position: fixed;
-    inset: 0;
+    z-index: 0;
 
     width: 100%;
     height: 100%;
 
-    z-index: 0;
 }
 
 #gh-link{
@@ -207,7 +182,6 @@ header a:focus-visible {
     top: calc(var(--external-margin) + var(--header-height) + 10px);
     left: var(--external-margin);
     
-    background: white;
     border-radius: var(--roundness);
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
@@ -220,7 +194,18 @@ header a:focus-visible {
     top: calc(var(--external-margin) + 2 * var(--header-height));
     left: var(--external-margin);
 
-    background: white;
+    border-radius: var(--roundness);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+    z-index: 1000;
+}
+
+#author-link {
+    position: absolute;
+
+    top: calc(var(--external-margin) + 2 * var(--header-height) + 75px);
+    left: var(--external-margin);
+
     border-radius: var(--roundness);
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
@@ -259,6 +244,7 @@ header a:focus-visible {
             target="_blank" 
             rel="noopener noreferrer"
             class="link-tile"
+            id="author-link"
         >mattw1285
         </a></li></ul>
     </nav></aside>
