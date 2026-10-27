@@ -19,13 +19,11 @@
     font-family: sans-serif;
     --roundness: 8px;
     
-    --pl-colors: #007e30;
+    --pl-clr: #007e30;
+    --pl-clr-second: #c6f8d9;
     --pl-logo: url('https://raw.githubusercontent.com/mattw1285/PlotLite/main/assets/plotlite-logo.svg');
     --pl-background: #FFFFFF;
     --pl-shadow: ;
-
-    --github-logo: url('https://raw.githubusercontent.com/mattw1285/PlotLite/main/assets/github.svg');
-    --license-logo: url('https://raw.githubusercontent.com/mattw1285/PlotLite/main/assets/license.svg');
 
     --header-height: 70px;
     --external-margin: 10px;
@@ -52,7 +50,7 @@ aside a {
     box-sizing: border-box;
 
     text-decoration: none;
-    color: var(--pl-colors);
+    color: var(--pl-clr);
     font-size: var(--tile-size);--tile-size: 50px;
 
     display: flex;
@@ -67,15 +65,17 @@ aside a {
     box-sizing: border-box;
 
     text-decoration: none;
-    color: var(--pl-colors);
+    color: var(--pl-clr);
     font-size: var(--tile-size);
 }
 
 aside a:hover {
-    background-color: #000000 impr;
+    background-color: var(--pl-clr-second);
 }
 
 .github-logo{
+    --github-logo: url('https://raw.githubusercontent.com/mattw1285/PlotLite/main/assets/github.svg');
+
     -webkit-mask: 
         var(--github-logo)
         no-repeat 
@@ -87,8 +87,8 @@ aside a:hover {
         center / contain
     ;
     
-    stroke: var(--pl-colors);
-    background-color: var(--pl-colors);
+    stroke: var(--pl-clr);
+    background-color: var(--pl-clr);
 
     width: 70%;
     height: 70%;
@@ -107,11 +107,13 @@ aside a:hover {
         center / contain
     ;
     
-    stroke: var(--pl-colors);
-    background-color: var(--pl-colors);
+    stroke: var(--pl-clr);
+    background-color: var(--pl-clr);
 }
 
 .license-logo {
+    --license-logo: url('https://raw.githubusercontent.com/mattw1285/PlotLite/main/assets/license.svg');
+
     -webkit-mask: 
         var(--license-logo)
         no-repeat 
@@ -123,8 +125,8 @@ aside a:hover {
         center / contain
     ;
     
-    stroke: var(--pl-colors);
-    background-color: var(--pl-colors);
+    stroke: var(--pl-clr);
+    background-color: var(--pl-clr);
 
     width: 70%;
     height: 70%;
@@ -163,7 +165,7 @@ header h1 {
     margin: 0;
 
     font-size: 2rem;
-    color: var(--pl-colors);
+    color: var(--pl-clr);
 }
 
 
