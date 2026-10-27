@@ -19,10 +19,10 @@
     font-family: sans-serif;
     --roundness: 8px;
     
-    --plotlite-colors: #007e30;
-    --plotlite-logo: url('https://raw.githubusercontent.com/mattw1285/PlotLite/main/assets/plotlite-logo.svg');
-    --plotlite-background: #FFFFFF;
-    --plotlite-shadow: ;
+    --pl-colors: #007e30;
+    --pl-logo: url('https://raw.githubusercontent.com/mattw1285/PlotLite/main/assets/plotlite-logo.svg');
+    --pl-background: #FFFFFF;
+    --pl-shadow: ;
 
     --github-logo: url('https://raw.githubusercontent.com/mattw1285/PlotLite/main/assets/github.svg');
     --license-logo: url('https://raw.githubusercontent.com/mattw1285/PlotLite/main/assets/license.svg');
@@ -53,8 +53,8 @@ body {
         center / contain
     ;
     
-    stroke: var(--plotlite-colors);
-    background-color: var(--plotlite-colors);
+    stroke: var(--pl-colors);
+    background-color: var(--pl-colors);
 
     width: 70%;
     height: 70%;
@@ -63,18 +63,18 @@ body {
 
 .plotlite-logo {
     -webkit-mask: 
-        var(--plotlite-logo)
+        var(--pl-logo)
         no-repeat 
         center / contain
     ;
     mask: 
-        var(--plotlite-logo)
+        var(--pl-logo)
         no-repeat 
         center / contain
     ;
     
-    stroke: var(--plotlite-colors);
-    background-color: var(--plotlite-colors);
+    stroke: var(--pl-colors);
+    background-color: var(--pl-colors);
 }
 
 .license-logo {
@@ -89,8 +89,8 @@ body {
         center / contain
     ;
     
-    stroke: var(--plotlite-colors);
-    background-color: var(--plotlite-colors);
+    stroke: var(--pl-colors);
+    background-color: var(--pl-colors);
 
     width: 70%;
     height: 70%;
@@ -106,12 +106,12 @@ body {
     width: var(--tile-size);
     height: var(--tile-size);
 
-    background-color: var(--plotlite-background);
+    background-color: var(--pl-background);
     border-radius: var(--roundness);
     box-sizing: border-box;
 
     text-decoration: none;
-    color: var(--plotlite-colors);
+    color: var(--pl-colors);
     font-size: var(--tile-size);
 }
 
@@ -148,7 +148,7 @@ header h1 {
     margin: 0;
 
     font-size: 2rem;
-    color: var(--plotlite-colors);
+    color: var(--pl-colors);
 }
 
 
@@ -181,12 +181,12 @@ header a::before {
 }
 
 header a:hover {
-    color: var(--plotlite-colors);
+    color: var(--pl-colors);
     background-color: #f0f7f2;
 }
 
 header a:focus-visible {
-    outline: 2px solid var(--plotlite-colors);
+    outline: 2px solid var(--pl-colors);
     outline-offset: 2px;
 }
 
