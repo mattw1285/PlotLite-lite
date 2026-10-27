@@ -237,32 +237,42 @@ header a:focus-visible {
 </head>
 
 <body>
-    <header id="header">
-        <h1>
-            <div class="plotlite-logo" id="header-logo"></div>
-            PlotLite-lite
-        </h1>
-        <a href="https://mattw1285.github.io/" target="_blank" rel="noopener noreferrer">mattw1285</a>    
-    </header>
+    <aside><nav>
+        <a href="https://github.com/mattw1285/PlotLite-lite" 
+            target="_blank"  
+            rel="noopener noreferrer"
+            id="gh-link"
+            class="link-tile"
+        >
+            <div class="github-logo"></div>
+        </a>
 
-    <a href="https://github.com/mattw1285/PlotLite-lite" 
-        target="_blank"  
-        rel="noopener noreferrer"
-        id="gh-link"
-        class="link-tile"
-    >
-        <div class="github-logo"></div>
-    </a>
+        <a href="./LICENSE.md" 
+            rel="noopener noreferrer"
+            class="link-tile"
+            id="license-link"
+        >
+            <div class="license-logo"></div>
+        </a>
 
-    <a href="./LICENSE.md" 
-        rel="noopener noreferrer"
-        id="license-link"
-        class="link-tile"
-    >
-        <div class="license-logo"></div>
-    </a>
+        <a href="https://mattw1285.github.io/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="link-tile"
+        >mattw1285
+        </a>    
+    </nav></aside>
 
-    <div id="map"></div>
+    <main>
+        <header id="header">
+            <h1>
+                <div class="plotlite-logo" id="header-logo"></div>
+                PlotLite-lite
+            </h1>
+        </header>
+
+        <div id="map"></div>
+    </main>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
