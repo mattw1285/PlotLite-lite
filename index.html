@@ -20,6 +20,7 @@
     
     --pl-clr: #007e30;
     --pl-clr-second: #f0f7f2;
+    --pl-clr-subtle: #C0C0C0;
     --pl-background: #FFFFFF;
     --pl-logo: url('https://raw.githubusercontent.com/mattw1285/PlotLite/main/assets/plotlite-logo.svg');
     --pl-roundness: 8px;
@@ -29,28 +30,6 @@
 }
 
 /* --- logo masks --- */
-.github-logo{
-    --github-logo: url('https://raw.githubusercontent.com/mattw1285/PlotLite/main/assets/github.svg');
-
-    -webkit-mask: 
-        var(--github-logo)
-        no-repeat 
-        center / contain
-    ;
-    mask: 
-        var(--github-logo)
-        no-repeat 
-        center / contain
-    ;
-    
-    stroke: var(--pl-clr);
-    background-color: var(--pl-clr);
-
-    width: 70%;
-    height: 70%;
-
-}
-
 .plotlite-logo {
     -webkit-mask: 
         var(--pl-logo)
@@ -67,6 +46,28 @@
     background-color: var(--pl-clr);
 }
 
+.github-logo{
+    --github-logo: url('https://raw.githubusercontent.com/mattw1285/PlotLite/main/assets/github.svg');
+
+    -webkit-mask: 
+        var(--github-logo)
+        no-repeat 
+        center / contain
+    ;
+    mask: 
+        var(--github-logo)
+        no-repeat 
+        center / contain
+    ;
+    
+    stroke: var(--pl-clr-subtle);
+    background-color: var(--pl-clr-subtle);
+
+    width: 70%;
+    height: 70%;
+
+}
+
 .license-logo {
     --license-logo: url('https://raw.githubusercontent.com/mattw1285/PlotLite/main/assets/license.svg');
 
@@ -81,8 +82,8 @@
         center / contain
     ;
     
-    stroke: var(--pl-clr);
-    background-color: var(--pl-clr);
+    stroke: var(--pl-clr-subtle);
+    background-color: var(--pl-clr-subtle);
 
     width: 70%;
     height: 70%;
@@ -102,8 +103,8 @@
         center / contain
     ;
     
-    stroke: var(--pl-clr);
-    background-color: var(--pl-clr);
+    stroke: var(--pl-clr-subtle);
+    background-color: var(--pl-clr-subtle);
 
     width: 70%;
     height: 70%;
@@ -120,9 +121,10 @@ html, body {
 header {
     position: absolute;
     top: var(--external-margin);
-    left: var(--external-margin);
+    left: 50%;
+    transform: translateX(-50%);
 
-    width: 1000px;
+    width: 500px;
     max-width: calc(100% - 2 * var(--external-margin));
     height: var(--header-height);
 
