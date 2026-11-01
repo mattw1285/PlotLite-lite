@@ -17,12 +17,12 @@
 <style>  
 :root {
     font-family: sans-serif;
-    --roundness: 8px;
     
     --pl-clr: #007e30;
     --pl-clr-second: #f0f7f2;
     --pl-background: #FFFFFF;
     --pl-logo: url('https://raw.githubusercontent.com/mattw1285/PlotLite/main/assets/plotlite-logo.svg');
+    --pl-roundness: 8px;
 
     --header-height: 75px;
     --external-margin: 10px;
@@ -134,7 +134,7 @@ header {
     padding: 0 20px;
 
     background-color: #FFFFFF;
-    border-radius: var(--roundness);
+    border-radius: var(--pl-roundness);
 
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
@@ -153,6 +153,12 @@ header h1 {
     color: var(--pl-clr);
 }
 
+header aside {
+    grid-column: 2;
+    display: flex;
+    align-items: right;
+}
+
 header aside a {
     --tile-size: 50px;
 
@@ -164,7 +170,7 @@ header aside a {
     height: var(--tile-size);
 
     background-color: var(--pl-background);
-    border-radius: var(--roundness);
+    border-radius: var(--pl-roundness);
     box-sizing: border-box;
 
     text-decoration: none;
@@ -177,10 +183,6 @@ header aside a {
 
     width: var(--tile-size);
     height: var(--tile-size);
-
-    background-color: var(--pl-background);
-    border-radius: var(--roundness);
-    box-sizing: border-box;
 
     text-decoration: none;
     color: var(--pl-clr);
