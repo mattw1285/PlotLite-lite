@@ -17,18 +17,97 @@
 <style>  
 :root {
     font-family: sans-serif;
-    --roundness: 8px;
     
-    --plotlite-colors: #007e30;
-    --plotlite-logo: url('https://raw.githubusercontent.com/mattw1285/PlotLite/main/assets/plotlite-logo.svg');
-    --plotlite-background: #FFFFFF;
-    --plotlite-shadow: ;
+    --pl-clr: #007e30;
+    --pl-clr-second: #f0f7f2;
+    --pl-clr-subtle: #C0C0C0;
+    --pl-background: #FFFFFF;
+    --pl-logo: url('https://raw.githubusercontent.com/mattw1285/PlotLite/main/assets/plotlite-logo.svg');
+    --pl-roundness: 8px;
 
+    --header-height: 75px;
+    --external-margin: 10px;
+}
+
+/* --- logo masks --- */
+.plotlite-logo {
+    -webkit-mask: 
+        var(--pl-logo)
+        no-repeat 
+        center / contain
+    ;
+    mask: 
+        var(--pl-logo)
+        no-repeat 
+        center / contain
+    ;
+    
+    stroke: var(--pl-clr);
+    background-color: var(--pl-clr);
+}
+
+.github-logo{
     --github-logo: url('https://raw.githubusercontent.com/mattw1285/PlotLite/main/assets/github.svg');
+
+    -webkit-mask: 
+        var(--github-logo)
+        no-repeat 
+        center / contain
+    ;
+    mask: 
+        var(--github-logo)
+        no-repeat 
+        center / contain
+    ;
+    
+    stroke: var(--pl-clr-subtle);
+    background-color: var(--pl-clr-subtle);
+
+    width: 70%;
+    height: 70%;
+
+}
+
+.license-logo {
     --license-logo: url('https://raw.githubusercontent.com/mattw1285/PlotLite/main/assets/license.svg');
 
-    --header-height: 70px;
-    --external-margin: 10px;
+    -webkit-mask: 
+        var(--license-logo)
+        no-repeat 
+        center / contain
+    ;
+    mask: 
+        var(--license-logo)
+        no-repeat 
+        center / contain
+    ;
+    
+    stroke: var(--pl-clr-subtle);
+    background-color: var(--pl-clr-subtle);
+
+    width: 70%;
+    height: 70%;
+}
+
+.author-logo {
+    --license-logo: url('https://raw.githubusercontent.com/mattw1285/PlotLite/main/assets/signature.svg');
+
+    -webkit-mask: 
+        var(--license-logo)
+        no-repeat 
+        center / contain
+    ;
+    mask: 
+        var(--license-logo)
+        no-repeat 
+        center / contain
+    ;
+    
+    stroke: var(--pl-clr-subtle);
+    background-color: var(--pl-clr-subtle);
+
+    width: 70%;
+    height: 70%;
 }
 
 html, body {
@@ -37,66 +116,56 @@ html, body {
     margin: 0;
 }
 
-body {
-    background-color: var(--default-background);
-}
 
-.github-logo{
-    -webkit-mask: 
-        var(--github-logo)
-        no-repeat 
-        center / contain
-    ;
-    mask: 
-        var(--github-logo)
-        no-repeat 
-        center / contain
-    ;
+/* --- header --- */
+header {
+    position: absolute;
+    top: var(--external-margin);
     
-    stroke: var(--plotlite-colors);
-    background-color: var(--plotlite-colors);
+    left: 0;
+    right: 0;
+    margin-inline: auto;
 
-    width: 70%;
-    height: 70%;
+    width: 500px;
+    max-width: calc(100% - 2 * var(--external-margin));
+    height: var(--header-height);
 
+    box-sizing: border-box;
+    padding: 0 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    background-color: var(--pl-background);
+    border-radius: var(--pl-roundness);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+    z-index: 1000;
 }
 
-.plotlite-logo {
-    -webkit-mask: 
-        var(--plotlite-logo)
-        no-repeat 
-        center / contain
-    ;
-    mask: 
-        var(--plotlite-logo)
-        no-repeat 
-        center / contain
-    ;
-    
-    stroke: var(--plotlite-colors);
-    background-color: var(--plotlite-colors);
+/* --- title --- */
+header h1 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin: 0;
+    white-space: nowrap;
+
+    font-size: 2rem;
+    color: var(--pl-clr);
 }
 
-.license-logo {
-    -webkit-mask: 
-        var(--license-logo)
-        no-repeat 
-        center / contain
-    ;
-    mask: 
-        var(--license-logo)
-        no-repeat 
-        center / contain
-    ;
-    
-    stroke: var(--plotlite-colors);
-    background-color: var(--plotlite-colors);
-
-    width: 70%;
-    height: 70%;
+/* --- navigation --- */
+header aside nav {
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
-.link-tile{
+header aside a {
     --tile-size: 50px;
 
     display: flex;
@@ -106,93 +175,32 @@ body {
     width: var(--tile-size);
     height: var(--tile-size);
 
-    background-color: var(--plotlite-background);
-    border-radius: var(--roundness);
     box-sizing: border-box;
+    border-radius: var(--pl-roundness);
 
     text-decoration: none;
-    color: var(--plotlite-colors);
-    font-size: var(--tile-size);
+    color: var(--pl-clr);
+
+    transition: background-color 150ms ease;
 }
 
-.link-tile:hover {
-    color: var(--plotlite-colors);
-    background-color: #f0f7f2 ;
+header aside a:hover {
+    background-color: var(--pl-clr-second);
 }
 
-header {
-    position: absolute;
-    top: var(--external-margin);
-    left: var(--external-margin);
-    
-    width: 50%;
-    min-width: 400px;
-
-    height: var(--header-height);
-
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
-
-    padding: 0 20px;
-
-    background-color: #FFFFFF;
-    border-radius: var(--roundness);
-
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-
-    z-index: 1000;
+header aside div:hover {
+    stroke: var(--pl-clr);
+    background-color: var(--pl-clr);
 }
 
-header h1 {
-    grid-column: 2;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+/* --- header logo --- */
+#header-logo {
+    --logo-multiplier: 0.75;
 
-    margin: 0;
+    flex-shrink: 0;
 
-    font-size: 2rem;
-    color: var(--plotlite-colors);
-}
-
-
-header a {
-    grid-column: 3;
-    justify-self: end;
-
-    display: flex;
-    align-items: center;
-    gap: 6px;
-
-    padding: 8px 12px;
-    border-radius: var(--roundness);
-
-    text-decoration: none;
-    color: #777;
-    font-size: 0.85rem;
-    font-weight: 500;
-    letter-spacing: 0.02em;
-
-    transition:
-        color 0.2s ease,
-        background-color 0.2s ease;
-}
-
-header a::before {
-    color: #aaa;
-    font-size: 0.8rem;
-    font-weight: 400;
-}
-
-header a:hover {
-    color: var(--plotlite-colors);
-    background-color: #f0f7f2;
-}
-
-header a:focus-visible {
-    outline: 2px solid var(--plotlite-colors);
-    outline-offset: 2px;
+    width: calc(var(--logo-multiplier) * var(--header-height));
+    height: calc(var(--logo-multiplier) * var(--header-height));
 }
 
 
@@ -205,37 +213,6 @@ header a:focus-visible {
 
     z-index: 0;
 }
-
-#gh-link{
-    position: absolute;
-
-    top: calc(var(--external-margin) + var(--header-height) + 10px);
-    left: var(--external-margin);
-    
-    border-radius: var(--roundness);
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-
-    z-index: 1000;
-}
-
-#license-link {
-    position: absolute;
-
-    top: calc(var(--external-margin) + 2 * var(--header-height));
-    left: var(--external-margin);
-
-    border-radius: var(--roundness);
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-
-    z-index: 1000;
-}
-
-#header-logo {
-    --logo-multiplier: 0.75;
-
-    width: calc(var(--logo-multiplier) * var(--header-height));
-    height: calc(var(--logo-multiplier) * var(--header-height));
-}
 </style>
 </head>
 
@@ -245,25 +222,35 @@ header a:focus-visible {
             <div class="plotlite-logo" id="header-logo"></div>
             PlotLite-lite
         </h1>
-        <a href="https://mattw1285.github.io/" target="_blank" rel="noopener noreferrer">mattw1285</a>    
+
+        <aside><nav>
+            <a href="https://github.com/mattw1285/PlotLite-lite" 
+                target="_blank"  
+                rel="noopener noreferrer"
+                id="gh-link"
+                class="link-tile"
+            >
+                <div class="github-logo"></div>
+            </a>
+
+            <a href="./LICENSE.md" 
+                rel="noopener noreferrer"
+                class="link-tile"
+                id="license-link"
+            >
+                <div class="license-logo"></div>
+            </a>
+
+            <a href="https://mattw1285.github.io/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="link-tile"
+                id="author-link"
+            >
+                <div class="author-logo"></div>
+            </a>
+        </nav></aside>
     </header>
-
-    <a href="https://github.com/mattw1285/PlotLite-lite" 
-        target="_blank"  
-        rel="noopener noreferrer"
-        id="gh-link"
-        class="link-tile"
-    >
-        <div class="github-logo"></div>
-    </a>
-
-    <a href="./LICENSE.md" 
-        rel="noopener noreferrer"
-        id="license-link"
-        class="link-tile"
-    >
-        <div class="license-logo"></div>
-    </a>
 
     <div id="map"></div>
 
@@ -295,7 +282,7 @@ L.tileLayer(
 ).addTo(map);
 
 L.control.zoom({
-    position: 'topright'
+    position: 'bottomright'
 }).addTo(map);
 </script>
 </body>
