@@ -20,59 +20,15 @@
     --roundness: 8px;
     
     --pl-clr: #007e30;
-    --pl-clr-second: #c6f8d9;
-    --pl-logo: url('https://raw.githubusercontent.com/mattw1285/PlotLite/main/assets/plotlite-logo.svg');
+    --pl-clr-second: #f0f7f2;
     --pl-background: #FFFFFF;
-    --pl-shadow: ;
+    --pl-logo: url('https://raw.githubusercontent.com/mattw1285/PlotLite/main/assets/plotlite-logo.svg');
 
-    --header-height: 50px;
+    --header-height: 75px;
     --external-margin: 10px;
 }
 
-html, body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-}
-
-aside a {
-    --tile-size: 50px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    width: var(--tile-size);
-    height: var(--tile-size);
-
-    background-color: var(--pl-background);
-    border-radius: var(--roundness);
-    box-sizing: border-box;
-
-    text-decoration: none;
-    color: var(--pl-clr);
-    font-size: var(--tile-size);--tile-size: 50px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    width: var(--tile-size);
-    height: var(--tile-size);
-
-    background-color: var(--pl-background);
-    border-radius: var(--roundness);
-    box-sizing: border-box;
-
-    text-decoration: none;
-    color: var(--pl-clr);
-    font-size: var(--tile-size);
-}
-
-aside a:hover {
-    background-color: var(--pl-clr-second);
-}
-
+/* --- logo masks --- */
 .github-logo{
     --github-logo: url('https://raw.githubusercontent.com/mattw1285/PlotLite/main/assets/github.svg');
 
@@ -132,6 +88,35 @@ aside a:hover {
     height: 70%;
 }
 
+.author-logo {
+    --license-logo: url('https://raw.githubusercontent.com/mattw1285/PlotLite/main/assets/signature.svg');
+
+    -webkit-mask: 
+        var(--license-logo)
+        no-repeat 
+        center / contain
+    ;
+    mask: 
+        var(--license-logo)
+        no-repeat 
+        center / contain
+    ;
+    
+    stroke: var(--pl-clr);
+    background-color: var(--pl-clr);
+
+    width: 70%;
+    height: 70%;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+
+/* --- header --- */
 header {
     position: absolute;
     top: var(--external-margin);
@@ -157,15 +142,53 @@ header {
 }
 
 header h1 {
-    grid-column: 2;
+    grid-column: 1;
     display: flex;
-    align-items: center;
+    align-items: left;
     gap: 10px;
 
     margin: 0;
 
     font-size: 2rem;
     color: var(--pl-clr);
+}
+
+header aside a {
+    --tile-size: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: var(--tile-size);
+    height: var(--tile-size);
+
+    background-color: var(--pl-background);
+    border-radius: var(--roundness);
+    box-sizing: border-box;
+
+    text-decoration: none;
+    color: var(--pl-clr);
+    font-size: var(--tile-size);--tile-size: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: var(--tile-size);
+    height: var(--tile-size);
+
+    background-color: var(--pl-background);
+    border-radius: var(--roundness);
+    box-sizing: border-box;
+
+    text-decoration: none;
+    color: var(--pl-clr);
+    font-size: var(--tile-size);
+}
+
+header aside a:hover {
+    background-color: var(--pl-clr-second);
 }
 
 
@@ -177,42 +200,6 @@ header h1 {
     height: 100%;
 
     z-index: 0;
-}
-
-#gh-link{
-    position: absolute;
-
-    top: calc(var(--external-margin) + var(--header-height) + 10px);
-    left: var(--external-margin);
-    
-    border-radius: var(--roundness);
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-
-    z-index: 1000;
-}
-
-#license-link {
-    position: absolute;
-
-    top: calc(var(--external-margin) + 2 * var(--header-height));
-    left: var(--external-margin);
-
-    border-radius: var(--roundness);
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-
-    z-index: 1000;
-}
-
-#author-link {
-    position: absolute;
-
-    top: calc(var(--external-margin) + 2 * var(--header-height) + 75px);
-    left: var(--external-margin);
-
-    border-radius: var(--roundness);
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-
-    z-index: 1000;
 }
 
 #header-logo {
@@ -232,30 +219,31 @@ header h1 {
         </h1>
 
         <aside><nav>
-            <ul><li><a href="https://github.com/mattw1285/PlotLite-lite" 
+            <a href="https://github.com/mattw1285/PlotLite-lite" 
                 target="_blank"  
                 rel="noopener noreferrer"
                 id="gh-link"
                 class="link-tile"
             >
                 <div class="github-logo"></div>
-            </a></li></ul>
+            </a>
 
-            <ul><li><a href="./LICENSE.md" 
+            <a href="./LICENSE.md" 
                 rel="noopener noreferrer"
                 class="link-tile"
                 id="license-link"
             >
                 <div class="license-logo"></div>
-            </a></li></ul>
+            </a>
 
-            <ul><li><a href="https://mattw1285.github.io/" 
+            <a href="https://mattw1285.github.io/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 class="link-tile"
                 id="author-link"
-            >mattw1285
-            </a></li></ul>
+            >
+                <div class="author-logo"></div>
+            </a>
         </nav></aside>
     </header>
 
