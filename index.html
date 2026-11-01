@@ -87,20 +87,21 @@ header {
 
     max-width: calc(100% - 2 * var(--external-margin));
     min-width: 500px;
-    max-width: 750px;
+    max-width: 1000px;
     height: var(--header-height);
 
     box-sizing: border-box;
     padding: 0 15px;
 
 
-    display: flex;
-    align-items: center;
+    
+    
     justify-content: space-between;
     gap: 15px;
 
     display: grid;
-    grid-template-columns: 25%, 50%, 25%;
+    grid-template-columns: 20% auto 20%;
+    align-items: center;
 
     background-color: var(--pl-background);
     border-radius: var(--pl-roundness);
@@ -113,6 +114,7 @@ header {
 header h1 {
     grid-column: 2;
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: 10px;
 
