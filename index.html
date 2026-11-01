@@ -25,7 +25,7 @@
     --pl-background: #FFFFFF;
     --pl-shadow: ;
 
-    --header-height: 70px;
+    --header-height: 50px;
     --external-margin: 10px;
 }
 
@@ -137,13 +137,13 @@ header {
     top: var(--external-margin);
     left: var(--external-margin);
     
-    width: 50%;
-    min-width: 400px;
+    width: 1000px;
+    max-width: 75%;
 
     height: var(--header-height);
 
     display: grid;
-    grid-template-columns: 1fr auto 1fr;
+    grid-template-columns: auto 1fr;
     align-items: center;
 
     padding: 0 20px;
@@ -225,39 +225,39 @@ header h1 {
 </head>
 
 <body>
-    <aside><nav>
-        <ul><li><a href="https://github.com/mattw1285/PlotLite-lite" 
-            target="_blank"  
-            rel="noopener noreferrer"
-            id="gh-link"
-            class="link-tile"
-        >
-            <div class="github-logo"></div>
-        </a></li></ul>
-
-        <ul><li><a href="./LICENSE.md" 
-            rel="noopener noreferrer"
-            class="link-tile"
-            id="license-link"
-        >
-            <div class="license-logo"></div>
-        </a></li></ul>
-
-        <ul><li><a href="https://mattw1285.github.io/" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            class="link-tile"
-            id="author-link"
-        >mattw1285
-        </a></li></ul>
-    </nav></aside>
-
     <main>
         <header id="header">
             <h1>
                 <div class="plotlite-logo" id="header-logo"></div>
                 PlotLite-lite
             </h1>
+
+            <aside><nav>
+                <ul><li><a href="https://github.com/mattw1285/PlotLite-lite" 
+                    target="_blank"  
+                    rel="noopener noreferrer"
+                    id="gh-link"
+                    class="link-tile"
+                >
+                    <div class="github-logo"></div>
+                </a></li></ul>
+
+                <ul><li><a href="./LICENSE.md" 
+                    rel="noopener noreferrer"
+                    class="link-tile"
+                    id="license-link"
+                >
+                    <div class="license-logo"></div>
+                </a></li></ul>
+
+                <ul><li><a href="https://mattw1285.github.io/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    class="link-tile"
+                    id="author-link"
+                >mattw1285
+                </a></li></ul>
+            </nav></aside>
         </header>
 
         <div id="map"></div>
