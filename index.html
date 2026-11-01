@@ -85,17 +85,22 @@ header {
     right: 0;
     margin-inline: auto;
 
-    width: 500px;
     max-width: calc(100% - 2 * var(--external-margin));
+    min-width: 500px;
+    max-width: 750px;
     height: var(--header-height);
 
     box-sizing: border-box;
     padding: 0 15px;
 
+
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 15px;
+
+    display: grid;
+    grid-template-columns: 25%, 50%, 25%;
 
     background-color: var(--pl-background);
     border-radius: var(--pl-roundness);
@@ -106,6 +111,7 @@ header {
 
 /* --- title --- */
 header h1 {
+    grid-column: 2;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -118,13 +124,16 @@ header h1 {
 }
 
 /* --- navigation --- */
-header aside nav {
-    display: flex;
-    align-items: center;
-    gap: 5px;
+header aside {
+    grid-column: 3;
 }
 
-header aside a {
+header aside nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+header aside nav a {
     --tile-size: 50px;
 
     display: flex;
