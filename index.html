@@ -121,8 +121,10 @@ html, body {
 header {
     position: absolute;
     top: var(--external-margin);
-    left: 50%;
-    transform: translateX(-50%);
+    
+    left: 0;
+    right: 0;
+    margin-inline: auto;
 
     width: 500px;
     max-width: calc(100% - 2 * var(--external-margin));
@@ -157,11 +159,6 @@ header h1 {
 }
 
 /* --- navigation --- */
-header aside {
-    display: flex;
-    align-items: center;
-}
-
 header nav {
     display: flex;
     align-items: center;
