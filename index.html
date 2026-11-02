@@ -24,22 +24,12 @@
     --pl-background: #FFFFFF;
     --pl-logo: url('https://raw.githubusercontent.com/mattw1285/PlotLite/main/assets/plotlite-logo.svg');
     --pl-roundness: 8px;
-
-    --header-height: 75px;
-    --external-margin: 10px;
+    --pl-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .plotlite-logo {
-    -webkit-mask: 
-        var(--pl-logo)
-        no-repeat 
-        center / contain
-    ;
-    mask: 
-        var(--pl-logo)
-        no-repeat 
-        center / contain
-    ;
+    -webkit-mask: var(--pl-logo) no-repeat center / contain;
+    mask: var(--pl-logo) no-repeat center / contain;
     
     stroke: var(--pl-clr);
     background-color: var(--pl-clr);
@@ -79,36 +69,40 @@ html, body {
 /* --- header --- */
 header {
     position: absolute;
-    top: var(--external-margin);
+    top: 10px;
     
     left: 0;
     right: 0;
     margin-inline: auto;
 
-    width: 500px;
     max-width: calc(100% - 2 * var(--external-margin));
-    height: var(--header-height);
+    min-width: 500px;
+    width: 750px;
+    height: 75px;
 
-    box-sizing: border-box;
-    padding: 0 15px;
 
-    display: flex;
-    align-items: center;
+    
     justify-content: space-between;
     gap: 15px;
 
+    display: grid;
+    grid-template-columns: 20% auto 20%;
+    align-items: center;
+
     background-color: var(--pl-background);
     border-radius: var(--pl-roundness);
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: var(--pl-shadow);
 
     z-index: 1000;
 }
 
 /* --- title --- */
 header h1 {
+    grid-column: 2;
     display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
 
     margin: 0;
     white-space: nowrap;
@@ -117,14 +111,22 @@ header h1 {
     color: var(--pl-clr);
 }
 
-/* --- navigation --- */
-header aside nav {
-    display: flex;
-    align-items: center;
-    gap: 5px;
+header h1 .plotlite-logo {
+    height: 50px;
+    width: 50px;
 }
 
-header aside a {
+/* --- navigation --- */
+header aside {
+    grid-column: 3;
+}
+
+header aside nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+header aside nav a {
     --tile-size: 50px;
 
     display: flex;
@@ -141,27 +143,18 @@ header aside a {
     color: var(--pl-clr);
 
     transition: background-color 150ms ease;
+
+    padding: 5%;
 }
 
-header aside a:hover {
+header aside nav a:hover {
     background-color: var(--pl-clr-second);
 }
 
-header aside .icon:hover {
+header aside nav .icon:hover {
     stroke: var(--pl-clr);
     background-color: var(--pl-clr);
 }
-
-/* --- header logo --- */
-#header-logo {
-    --logo-multiplier: 0.75;
-
-    flex-shrink: 0;
-
-    width: calc(var(--logo-multiplier) * var(--header-height));
-    height: calc(var(--logo-multiplier) * var(--header-height));
-}
-
 
 #map {
     position: fixed;
@@ -178,7 +171,7 @@ header aside .icon:hover {
 <body>
     <header id="header">
         <h1>
-            <div class="plotlite-logo" id="header-logo"></div>
+            <div class="plotlite-logo"></div>
             PlotLite-lite
         </h1>
 
