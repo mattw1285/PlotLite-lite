@@ -24,22 +24,12 @@
     --pl-background: #FFFFFF;
     --pl-logo: url('https://raw.githubusercontent.com/mattw1285/PlotLite/main/assets/plotlite-logo.svg');
     --pl-roundness: 8px;
-
-    --header-height: 75px;
-    --external-margin: 10px;
+    --pl-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .plotlite-logo {
-    -webkit-mask: 
-        var(--pl-logo)
-        no-repeat 
-        center / contain
-    ;
-    mask: 
-        var(--pl-logo)
-        no-repeat 
-        center / contain
-    ;
+    -webkit-mask: var(--pl-logo) no-repeat center / contain;
+    mask: var(--pl-logo) no-repeat center / contain;
     
     stroke: var(--pl-clr);
     background-color: var(--pl-clr);
@@ -79,7 +69,7 @@ html, body {
 /* --- header --- */
 header {
     position: absolute;
-    top: var(--external-margin);
+    top: 10px;
     
     left: 0;
     right: 0;
@@ -88,10 +78,9 @@ header {
     max-width: calc(100% - 2 * var(--external-margin));
     min-width: 500px;
     width: 750px;
-    height: var(--header-height);
+    height: 75px;
 
-    box-sizing: border-box;
-    padding: 0 15px;    
+
     
     justify-content: space-between;
     gap: 15px;
@@ -102,7 +91,7 @@ header {
 
     background-color: var(--pl-background);
     border-radius: var(--pl-roundness);
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: var(--pl-shadow);
 
     z-index: 1000;
 }
@@ -113,13 +102,18 @@ header h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
 
     margin: 0;
     white-space: nowrap;
 
     font-size: 2rem;
     color: var(--pl-clr);
+}
+
+header h1 .plotlite-logo {
+    height: 50px;
+    width: 50px;
 }
 
 /* --- navigation --- */
@@ -162,17 +156,6 @@ header aside nav .icon:hover {
     background-color: var(--pl-clr);
 }
 
-/* --- header logo --- */
-#header-logo {
-    --logo-multiplier: 0.75;
-
-    flex-shrink: 0;
-
-    width: calc(var(--logo-multiplier) * var(--header-height));
-    height: calc(var(--logo-multiplier) * var(--header-height));
-}
-
-
 #map {
     position: fixed;
     inset: 0;
@@ -188,7 +171,7 @@ header aside nav .icon:hover {
 <body>
     <header id="header">
         <h1>
-            <div class="plotlite-logo" id="header-logo"></div>
+            <div class="plotlite-logo"></div>
             PlotLite-lite
         </h1>
 
