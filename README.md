@@ -44,6 +44,7 @@ Thanks to the projects that make this possible:
 - [OpenStreetMap](https://www.openstreetmap.org/) - map tiles
 - [unpkg](https://unpkg.com/) - cdn for npm packages
 - [GitHub](https://github.com/) - source hosting
+- [Lucide](https://lucide.dev/) - iconography
 
 Without ripping off the shoulders of these giants, I would not have been able to produce this AI slop.
 I did, at least, write the `README.md`.
