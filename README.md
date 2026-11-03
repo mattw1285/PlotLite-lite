@@ -1,6 +1,14 @@
-# PlotLite-lite
+<div align="center">
+  <img alt="PlotLite Logo" src="https://raw.githubusercontent.com/mattw1285/PlotLite/main/assets/plotlite-logo.svg" width="250px" height="250px">
+</div>
 
+<div align="center">
+  <img alt="PlotLite Logo" src="https://raw.githubusercontent.com/mattw1285/PlotLite/main/assets/lite-txt.svg" width="100%">
+</div>
+
+<p align="center">
 The lightest of light GIS editors.
+</p>
 
 ## Overview
 
@@ -36,6 +44,7 @@ Thanks to the projects that make this possible:
 - [OpenStreetMap](https://www.openstreetmap.org/) - map tiles
 - [unpkg](https://unpkg.com/) - cdn for npm packages
 - [GitHub](https://github.com/) - source hosting
+- [Lucide](https://lucide.dev/) - iconography
 
 Without ripping off the shoulders of these giants, I would not have been able to produce this AI slop.
 I did, at least, write the `README.md`.
