@@ -1,3 +1,7 @@
+<div align="center">
+  <img alt="PlotLite Logo" src="https://raw.githubusercontent.com/mattw1285/PlotLite/main/assets/plotlite-logo.svg" width="250px" height="250px">
+</div>
+
 # PlotLite-lite
 
 The lightest of light GIS editors.
