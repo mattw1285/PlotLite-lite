@@ -65,25 +65,16 @@ html, body {
     margin: 0;
 }
 
-
 /* --- header --- */
 header {
     position: absolute;
-    top: 10px;
-    
-    left: 0;
-    right: 0;
+    inset: 10px 0 0 0;
     margin-inline: auto;
 
-    max-width: calc(100% - 2 * var(--external-margin));
+    max-width: calc(100% - 20px);
     min-width: 500px;
     width: 750px;
     height: 75px;
-
-
-    
-    justify-content: space-between;
-    gap: 15px;
 
     display: grid;
     grid-template-columns: 20% auto 20%;
@@ -94,9 +85,9 @@ header {
     box-shadow: var(--pl-shadow);
 
     z-index: 1000;
+    /*padding: 10px 10px;*/
 }
 
-/* --- title --- */
 header h1 {
     grid-column: 2;
     display: flex;
@@ -116,7 +107,6 @@ header h1 .plotlite-logo {
     width: 50px;
 }
 
-/* --- navigation --- */
 header aside {
     grid-column: 3;
 }
@@ -156,6 +146,7 @@ header aside nav .icon:hover {
     background-color: var(--pl-clr);
 }
 
+/* --- App Stuff --- */
 #map {
     position: fixed;
     inset: 0;
