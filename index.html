@@ -126,10 +126,18 @@ header aside nav a {
 header aside nav a:hover {
     background-color: var(--pl-clr-second);
 }
-header aside nav .icon:hover {
+header aside nav a:hover .icon{
     stroke: var(--pl-clr);
     background-color: var(--pl-clr);
 }
+header aside nav a:active {
+    transform: translateY(0) scale(0.94);
+}
+header aside nav a:focus-visible {
+    outline: 2px solid var(--pl-clr);
+    outline-offset: 3px;
+}
+
 
 /* --- App Stuff --- */
 #map {
